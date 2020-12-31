@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const AddTransactions = () => {
+
+    const [text,setText]=useState("");
+    const [amount,setAmount]=useState(0)
+
+
     return (
         <>
 
@@ -9,12 +14,12 @@ export const AddTransactions = () => {
 
                 <div className="form-control">
                     <label htmlFor="text">Text</label>
-                    <input type="text" id="text" placeholder="Please enter text ... "/>
+                    <input type="text" value={text} onChange={e=>setText(e.target.value)} placeholder="Please enter text ... "/>
                 </div>
 
                 <div className="form-control">
                     <label htmlFor="amount">Amount</label>
-                    <input type="number" id="amount" placeholder="Plase enter amount ... "/>
+                    <input type="number" value={amount} onChange={e=>setAmount(e.target.value)} placeholder="Plase enter amount ... "/>
                 </div>
 
             </form>            
